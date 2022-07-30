@@ -1,0 +1,106 @@
+* {
+  background-color: #eaf0f2;
+  box-sizing: border-box;
+}
+.container{
+    background-color: black;
+}
+.nav-menu{
+    float: left;
+    list-style: none;
+    background-color: black;
+}
+.nav-menu li{
+    display: inline-block;
+}
+.head button{
+    display: inline-block;
+    border: none;
+    margin: 0px 10px;
+    padding: 15px 56px;
+    cursor: pointer;
+}
+.button2{
+    position: relative; 
+    background-color: rgb(130, 130, 206);
+
+}
+.button1{
+    background-color: white;
+
+}
+.head{
+    display: inline-block;
+}
+.nav-menu li a{
+    color:black;
+    padding: 5px 20px;
+    font-size: 20px;
+    font-family: 'Verdana', 'sans-serif';
+}
+
+a {
+  text-decoration: none;
+  
+}
+
+.scary{
+    display: block;
+    float: left;
+    
+}
+.chief{
+    display: flex;
+    padding-top: 50px;
+    padding-top: 50px;
+  
+}
+.foot {
+  display: flex;
+  padding: 10px;
+  float: left;
+  width: 50%;
+}
+.story{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.latest{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 50px;
+}
+.shorts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popular{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boat{
+    border: 1px solid black;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 500px;
+    margin-left: 500px;
+    text-align: center;
+    border-color: #eaf0f2;
+}
+button{
+    padding: 20px;
+    border-radius: 15px;
+}
+.foot{
+    display: flex;
+    float: left;
+}
+
+img{
+    border-radius: 20px;
+}
