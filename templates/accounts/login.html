@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>LoginPage</h1>
+
+{% comment %} {{ user_form.non_field_errors }} {% endcomment %}
+<form action='' method='POST'>
+    {% csrf_token %}
+    {{form.as_p}}    
+    <button type='submit'>Login</button>
+</form>
+
+{% endblock content %}
