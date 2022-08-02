@@ -3,7 +3,7 @@
 {% block content %}
 
 
-<h1>Landing page</h1>
+<h1>Play Video </h1>
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
@@ -11,12 +11,10 @@
     {% endfor %}
 </ul>
 {% endif %}
-{% for video in videos %}
 <h3>{{ video.title }}</h3>
-<video width="500" controls>
+<video width="500" controls >
     <source src="{{video.video_path.url}}" type="video/mp4" >
 </video>
-{% endfor %}
 
 
 {% endblock content %}
