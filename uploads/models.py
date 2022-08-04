@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from pymediainfo import MediaInfo
 from django.core.exceptions import ValidationError
+import uuid
 from pprint import pprint
 
 # Create your models here.
@@ -16,9 +17,11 @@ def validate_video(video):
 
 # Create your models here.
 class Upload(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     description = models.TextField()
+    no_of_reacts = models.IntegerField(default=0)
     video_path = models.FileField('Video', upload_to='videos', validators=[validate_video])
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

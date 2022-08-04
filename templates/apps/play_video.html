@@ -15,6 +15,18 @@
 <video width="500" controls >
     <source src="{{video.video_path.url}}" type="video/mp4" >
 </video>
+<a href="/react-video/?video_id={{video.id}}">
+    <button>Like {{video.no_of_reacts}}</button>
+</a>
+
+<!-- TODO -->
+<a href="/share-video/?video_id={{video.id}}">
+    <button>Share</button>
+</a>
+<a href="/share-video/?video_id={{video.id}}">
+    <button>Comment</button>
+</a>
+
 
 
 {% endblock content %}
