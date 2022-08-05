@@ -21,11 +21,16 @@
 
 <!-- TODO -->
 <a href="/share-video/?video_id={{video.id}}">
-    <button>Share</button>
+    <button>Share </button>
 </a>
 <a href="/share-video/?video_id={{video.id}}">
     <button>Comment</button>
 </a>
+<form action="/comment-video/?video_id={{video.id}}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Comment</button>
+</form>
 
 
 
