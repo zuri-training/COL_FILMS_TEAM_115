@@ -1,44 +1,304 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
 
-<h1>Landing page</h1>
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
 
-{% for video in videos %}
-<h3>{{ video.title }}</h3>
-<a href="/play-video?video_id={{video.id}}">
-    <video width="500" >
-        <source src="{{video.video_path.url}}" type="video/mp4" >
-    </video>
-</a>
-{% endfor %}
-<br/>
+<nav>
+    <div class="logo" style="color: rgb(9, 75, 175);">STUDEO</div>
+    <span class="menubtn" onclick="openNav()"> &#9776; </span>
+    <div class="navmenu">
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">About Us</a>
+            </li>
+            <li>
+                <a href="#">Contact Us</a>
+            </li>
+            <li>
+                <a href="#">Info</a>
+            </li>
+            <button class="button1" type="button">LogIn</button>
+            <button class="button2" type="button">Sign Up</button>
+        </ul>
+    </div>
+</nav>
 
-<div class="pagination">
-    <span class="step-links">
-        {% if videos.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ videos.previous_page_number }}">previous</a>
-        {% endif %}
-
-        <span class="current">
-            Page {{ videos.number }} of {{ videos.paginator.num_pages }}.
-        </span>
-
-        {% if videos.has_next %}
-            <a href="?page={{ videos.next_page_number }}">next</a>
-            <a href="?page={{ videos.paginator.num_pages }}">last &raquo;</a>
-        {% endif %}
-    </span>
+<div class="sideNav" id="sidenav">
+    <a href="#" class="closebtn" onclick="closeNav()" >&#10006;</a>
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="contact_us.html">Contact Us</a>
+    <a href="#">Info</a>
+    {% comment %} <a href="login/">
+        <button class="button1" type="button">LogIn</button>
+    </a>
+    <a href="register/">
+        <button class="button2" type="button">Sign Up</button>
+    </a> {% endcomment %}
+    <button>
+        <a href="login/">LogIn</a>
+    </button>
+    <button>
+        <a href="register/">Sign Up</a>
+    </button>
+    
+</div>
+<main>
+    <div class="chief">
+        <div class="scary">
+            <h1>Create and Watch Videos
+            </h1>
+            <p>Get unlimited access to make your own short movies and  watch your favorite videos once you sign up.</p>
+            <button>
+                <a href="register/" style="color: black">Get Started</a>
+            </button>
+        </div>
+        <div class="scarypix">
+            <img src="{% static 'images/IMAGE 1.jpg' %}" alt="shortfilm" width="550px" height="400px">
+        </div>
+    </div>
+    <h3 style="text-align: center;">Latest Movies Uploaded</h3>
+    <div class="list">
+    <div class="column1" id="column">
+        <div class="latest_1">
+    <div class="latestpix_1">
+            <img src="{% static 'images/LATEST FILM 1.jpg' %}" alt="shortfilm" width="250px" height="200px">
+        </div>
+        <div class="latestnote_1">
+           <div class="cards_1"> <h4>Movie title</h4>
+             <p>Action, crime and comedy</p></div>
+            </div>
+        </div>
+        <div class="latest_2">
+            <div class="latestpix_2">
+                    <img src="{% static 'images/LATEST FILM 2.jpg' %}" alt="shortfilm" width="250px" height="200px">
+                </div>
+                <div class="latestnote_2">
+                    <div class="cards_1"> <h4>Movie title</h4>
+                        <p>Action, crime and comedy</p></div>
+                    </div>
+                </div>
+                <div class="latest_3">
+                    <div class="latestpix_3">
+                            <img src="{% static 'images/LATEST FILM 3.jpg' %}" alt="shortfilm" width="250px" height="200px">
+                        </div>
+                        <div class="latestnote_3">
+                            <div class="cards_1"> <h4>Movie title</h4>
+                                <p>Action, crime and comedy</p></div>
+                            </div>
+                        </div>
+                        <div class="latest_1">
+                            <div class="latestpix_1">
+                                    <img src="{% static 'images/LATEST FILM 1.jpg' %}" alt="shortfilm" width="250px" height="200px">
+                                </div>
+                                <div class="latestnote_1">
+                                   <div class="cards_1"> <h4>Movie title</h4>
+                                     <p>Action, crime and comedy</p></div>
+                                    </div>
+                                </div>
+                                <div class="latest_2">
+                                    <div class="latestpix_2">
+                                            <img src="{% static 'images/LATEST FILM 2.jpg' %}" alt="shortfilm" width="250px" height="200px">
+                                        </div>
+                                        <div class="latestnote_2">
+                                            <div class="cards_1"> <h4>Movie title</h4>
+                                                <p>Action, crime and comedy</p></div>
+                                            </div>
+                                        </div>
+                                        <div class="latest_3">
+                                            <div class="latestpix_3">
+                                                    <img src="{% static 'images/LATEST FILM 3.jpg' %}" alt="shortfilm" width="250px" height="200px">
+                                                </div>
+                                                <div class="latestnote_3">
+                                                    <div class="cards_1"> <h4>Movie title</h4>
+                                                        <p>Action, crime and comedy</p></div>
+                                                    </div>
+                                                </div>
+            
+     </div>
+        <h3 style="text-align: center;">Short Series Movies</h3>
+        <div class="column2" id="column">
+            <div class="short_1">
+        <div class="shortpix_1">
+                <img src="{% static 'images/SHORT FILM 1.jpg' %}" alt="shortfilm" width="250px" height="200px">
+            </div>
+            <div class="shortnote_1">
+                <div class="cards_2"><h4>Movie title</h4>
+                 <p>Action, crime and comedy</p></div>
+                 
+                 
+                </div>
+            </div>
+            <div class="short_2">
+                <div class="shortpix_2">
+                        <img src="{% static 'images/SHORT FILM 2.jpg' %}" alt="shortfilm" width="250px" height="200px">
+                    </div>
+                    <div class="shortnote_2">
+                        <div class="cards_2"><h4>Movie title</h4>
+                         <p>Action, crime and comedy</p></div>
+                         
+                        </div>
+                    </div>
+                    <div class="short_3">
+                        <div class="shortpix_3">
+                                <img src="{% static 'images/SHORT FILM 3.jpg' %}" alt="shortfilm" width="250px" height="200px">
+                            </div>
+                            <div class="shortnote_3">
+                               <div class="cards_2"> <h4>Movie title</h4>
+                                 <p>Action, crime and comedy</p></div>
+                                </div>
+                            </div>
+                            <div class="short_1">
+                                <div class="shortpix_1">
+                                        <img src="{% static 'images/SHORT FILM 1.jpg' %}" alt="shortfilm" width="250px" height="200px">
+                                    </div>
+                                    <div class="shortnote_1">
+                                        <div class="cards_2"><h4>Movie title</h4>
+                                         <p>Action, crime and comedy</p></div>
+                                         
+                                         
+                                        </div>
+                                    </div>
+                                    <div class="short_2">
+                                        <div class="shortpix_2">
+                                                <img src="{% static 'images/SHORT FILM 2.jpg' %}" alt="shortfilm" width="250px" height="200px">
+                                            </div>
+                                            <div class="shortnote_2">
+                                                <div class="cards_2"><h4>Movie title</h4>
+                                                 <p>Action, crime and comedy</p></div>
+                                                 
+                                                </div>
+                                            </div>
+                                            <div class="short_3">
+                                                <div class="shortpix_3">
+                                                        <img src="{% static 'images/SHORT FILM 3.jpg' %}" alt="shortfilm" width="250px" height="200px">
+                                                    </div>
+                                                    <div class="shortnote_3">
+                                                       <div class="cards_2"> <h4>Movie title</h4>
+                                                         <p>Action, crime and comedy</p></div>
+                                                        </div>
+                                                    </div>
+           
+        </div>
+        <h3 style="text-align: center;">Popular Thrillers</h3>
+        <div class="column3" id="column">
+            <div class="popular_1">
+        <div class="popularpix_1">
+                <img src="{% static 'images/POPULAR FILM 1.jpg' %}" alt="popularfilm" width="250px" height="200px">
+            </div>
+            <div class="popularnote_1">
+                <div class="cards_3"> <h4>Movie title</h4>
+                    <p>Action, crime and comedy</p></div>
+                </div>
+            </div>
+            <div class="popular_2">
+                <div class="popularpix_2">
+                        <img src="{% static 'images/POPULAR FILM 2.jpg' %}" alt="popularfilm" width="250px" height="200px">
+                    </div>
+                    <div class="popularnote_2">
+                        <div class="cards_3"> <h4>Movie title</h4>
+                            <p>Action, crime and comedy</p></div>
+                        </div>
+                    </div>
+                    <div class="popular_3">
+                        <div class="popularpix_3">
+                                <img src="{% static 'images/POPULAR FILM 3.jpg' %}" alt="popularfilm" width="250px" height="200px">
+                            </div>
+                            <div class="popularnote_3">
+                                <div class="cards_3"> <h4>Movie title</h4>
+                                    <p>Action, crime and comedy</p></div>
+                                </div>
+                            </div>
+                            <div class="popular_1">
+                                <div class="popularpix_1">
+                                        <img src="{% static 'images/POPULAR FILM 1.jpg' %}" alt="popularfilm" width="250px" height="200px">
+                                    </div>
+                                    <div class="popularnote_1">
+                                        <div class="cards_3"> <h4>Movie title</h4>
+                                            <p>Action, crime and comedy</p></div>
+                                        </div>
+                                    </div>
+                                    <div class="popular_2">
+                                        <div class="popularpix_2">
+                                                <img src="{% static 'images/POPULAR FILM 2.jpg' %}" alt="popularfilm" width="250px" height="200px">
+                                            </div>
+                                            <div class="popularnote_2">
+                                                <div class="cards_3"> <h4>Movie title</h4>
+                                                    <p>Action, crime and comedy</p></div>
+                                                </div>
+                                            </div>
+                                            <div class="popular_3">
+                                                <div class="popularpix_3">
+                                                        <img src="{% static 'images/POPULAR FILM 3.jpg' %}" alt="popularfilm" width="250px" height="200px">
+                                                    </div>
+                                                    <div class="popularnote_3">
+                                                        <div class="cards_3"> <h4>Movie title</h4>
+                                                            <p>Action, crime and comedy</p></div>
+                                                        </div>
+                                                    </div>
+            
+    </div>
+        <div class="boat">
+            <h2>REACH A LARGE AUDIENCE</h2>
+            <p>Your content will be seen by College students in all University
+                and people in the indutries can view your profiles and videos</p><br>
+            <button>
+                <a href="register/" style="color: white;">Sign Up For Free</a>
+            </button>
+        </div>
+    </main>
+    <div class="base">
+        <div class="students">
+            <img src="{% static 'images/collegestudents.jpg' %}" alt="shortfilm" width="450px" height="300px">
+        </div>
+        <div class="studentsnote">
+        <h2 style="text-align: center;">About Us </h2>
+        <p>
+            Col_films is an online movie streaming platform where college students can stream and upload short movies not more 15 mins. our mission is to give young college creatives visibility, learn about our brand, our community and equally be entertained from other creatives contents around.</p>  
+    </div> 
+    
 </div>
 
+<footer>
+<div class="foot">
+    <div class="left">
+    <h2 style="color: rgb(9, 75, 175);">STUDEO </h2>
+    <p>
+        Col_films is an online movie streaming platform where college students can stream and upload short movies not more 15 mins. our mission is to give young college creatives visibility, learn about our brand, our community and equally be entertained from other creatives contents around.</p>  
+</div>
+<div class="middle">
+    <h2 style="color: grey;">Company </h2>
+    <p>
+        About Us</p>  
+        <p>
+            Contact Us</p> 
+            <p>
+                Support</p>   
+</div>
+<div class="right">
+    <h2 style="color: lightgrey;">Legal </h2>
+    <p>Term of Use</p>  
+        <p>Term of Service</p> 
+            <p>Privacy Policy</p>
+                <p>FAQ</p>   
+</div>
+</div>
+<h5><span>&#169</span> 2022 Copyright. All rights reserved.</h5>
+</footer>
+<script>
+    function openNav() {
+        document.getElementById("sidenav").style.width ="50%";
+    }
+    function closeNav() {
+document .getElementById("sidenav").style.width ="0%";
+}
+</script>
+{% comment %} <script src="script.js">
+
+</script> {% endcomment %}
 
 {% endblock content %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>Landing page</h1>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% for video in videos reversed %}
+<h3>{{ video.title }}</h3>
+<a href="/play-video?video_id={{video.id}}">
+    <video width="500" >
+        <source src="{{video.video_path.url}}" type="video/mp4" >
+    </video>
+</a>
+{% endfor %}
+<br/>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if videos.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ videos.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ videos.number }} of {{ videos.paginator.num_pages }}.
+        </span>
+
+        {% if videos.has_next %}
+            <a href="?page={{ videos.next_page_number }}">next</a>
+            <a href="?page={{ videos.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+
+{% endblock content %}

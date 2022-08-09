@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.auth.models import User  
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError  
-from .models import Profile
+from .models import Contact, Profile
   
 class CustomUserCreationForm(UserCreationForm):  
     firstname = forms.CharField(label='First Name', min_length=5, max_length=150)  
@@ -51,3 +51,8 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('gender', 'student_id_card')
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ('name', 'email', 'message')

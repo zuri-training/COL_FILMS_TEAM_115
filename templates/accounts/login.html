@@ -1,15 +1,46 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+  <div class="welcome">
+    <h2>Welcome, please sign in</h2>
+  </div>
 
+  <div class ="log">
+    {% comment %} <form>
+      <div class="fill">
+        <label for="Email"><b>Email address</b></label>
+        <input type="text" placeholder="biolaodogwu@gmail.com" name="email" required>
 
-<h1>LoginPage</h1>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        <span class="psw"><a href="#">Forgot password?</a></span>
+        <button class="button5" type="submit">Sign In</button>
+        
+        <div class="account">
+        <p>Don't have an account? <a href="#">Create Account</a></p> </div>
+      </div>
+    </form> {% endcomment %}
 
-{% comment %} {{ user_form.non_field_errors }} {% endcomment %}
-<form action='' method='POST'>
-    {% csrf_token %}
-    {{form.as_p}}    
-    <button type='submit'>Login</button>
-</form>
+    <form action='' method='POST'>
+      <div class="fill">
+        {% csrf_token %}
+        {{form.as_p}}    
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+        <span class="psw"><a href="#">Forgot password?</a></span>
 
+        <button class="button5" type='submit'>Login</button>
+
+        
+        <div class="account">
+          <p>Don't have an account? <a href="/register/">Create Account</a></p> 
+        </div>
+      </div>
+    </form>
+    <div class="avatar">
+      <img src="{% static 'images/login_picture.jpg' %}" alt="Avatar" width="350px" height="250px" >
+    </div>
+  
+  </div>
 {% endblock content %}

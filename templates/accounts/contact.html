@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<header>
+    <nav2>
+        <div class="action" style="color: white;">Contact Us</div>
+        <div class="navmenu">
+            <ul>
+                <button class="button1" type="button" style="color:rgb(29, 106, 141)">LogIn</button>
+                <button class="button2" type="button" style="color:white">Sign Up</button>
+            </ul>
+        </div>
+    </nav2>
+</header>
+
+<main>
+<div class="above">
+<div class="form">
+<form method='POST'>
+    {% csrf_token %}
+    {% comment %} <label for="fullname">Your Name</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Biola Odogwu">
+
+    <label for="Email">Email Address</label>
+    <input type="text" id="fullname" name="fullname" placeholder="biolaodogwu@gmail.com">
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Type your message..." style="height:200px"></textarea>  {% endcomment %}
+    {{ form.as_p }}
+    <input type="submit" value="Send message">
+</form>
+</div>
+<hr width="1" size="500">
+<div class="contact">
+    <h4>
+        Email Us
+    </h4>
+    <p> <span2>&#9993;</span2>  info@studeo.com </p>
+    <h4>
+        Call Us
+    </h4>
+    <p><span2>&#9743;</span2>+234-8160-7677-10</p>
+    <div class="socials">
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-instagram"></a>
+</div>
+</div>
+
+</div>
+
+</main>
+
+{% endblock content %}

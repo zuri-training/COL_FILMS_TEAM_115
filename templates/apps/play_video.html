@@ -23,13 +23,37 @@
 <a href="/share-video/?video_id={{video.id}}">
     <button>Share </button>
 </a>
-<a href="/share-video/?video_id={{video.id}}">
-    <button>Comment</button>
+<a href="/save-video/?video_id={{video.id}}">
+    <button>Save </button>
 </a>
+<a href="/fetch-saved-video/?video_id={{video.id}}">
+    <button>Saved </button>
+</a>
+{% for comment in comments reversed %}
+    <p> {{ comment.user.username }} </p>
+    <p> {{ comment.comment }} </p>
+{% endfor%}
+<div class="pagination">
+    <span class="step-links">
+        {% if comments.has_previous %}
+            <a href="?video_id={{video.id}}&page=1">&laquo; first</a>
+            <a href="?video_id={{video.id}}&page={{ comments.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ comments.number }} of {{ comments.paginator.num_pages }}.
+        </span>
+
+        {% if comments.has_next %}
+            <a href="?video_id={{video.id}}&page={{ comments.next_page_number }}">next</a>
+            <a href="?video_id={{video.id}}&page={{ comments.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
 <form action="/comment-video/?video_id={{video.id}}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button>Comment</button>
+    <button type='submit'>Comment</button>
 </form>
 
 

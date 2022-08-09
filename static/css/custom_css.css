@@ -1,0 +1,14 @@
+.fill label{
+    font-weight: bolder;
+}
+
+input[type="email"]{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(29, 106, 141);
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}

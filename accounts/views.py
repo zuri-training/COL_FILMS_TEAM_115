@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from .forms import ProfileForm, CustomUserCreationForm
+from .forms import ContactForm, ProfileForm, CustomUserCreationForm
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm 
 from django.contrib import messages
 
@@ -26,6 +26,16 @@ def register(request):
     context = {"user_form": user_form, "profile_form": profile_form}
     return render(request, 'accounts/register.html', context)
 
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        print(form)
+    else:
+        form = ContactForm()
+    context = {
+        'form' : form
+    }
+    return render(request, 'accounts/contact.html', context)
 
 def login_view(request):
     if request.method == "POST":
@@ -37,6 +47,8 @@ def login_view(request):
             return redirect('/')
     else:
         form = AuthenticationForm(request)
+        # form.fields['username'].widget.attrs['class'] = "bold"
+        # form.fields['password'].widget.attrs['class'] = "bold"
     context = {
         "form": form
     }

@@ -1,4 +1,5 @@
 from distutils.command.upload import upload
+from email import message
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
@@ -35,3 +36,9 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+class Contact(models.Model):
+    name = models.CharField(max_length=50, verbose_name='Your name')
+    email = models.EmailField()
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
