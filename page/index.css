@@ -1,0 +1,85 @@
+body
+{
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    background: #FFFFFF;
+    font-family: 'roboto', sans-serif;
+}
+.RegistrationPage{
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    background: #FFFFFF;
+    margin: auto;
+    border-radius: 3px;
+    }
+h1{
+    position: absolute;
+    width: 255px;
+    height: 48px;
+    left: 64px;
+    top: 145px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    color: #3AA4DA;
+    padding-top: 15px;
+    text-align: center;
+}
+form{
+    width: 300px;
+    margin-left: 20px;
+    font-size: 18px;
+}
+form label{
+    display: flex;
+    margin-top: 20px;
+    font-size: 18px;
+}
+form input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+}
+input [type="button"]{
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: blue;
+    color: white;
+    font-size: 18px;
+}
+P{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+
+}
+.pa{
+    position: absolute;
+    width: 401px;
+    height: 36px;
+    left: 133px;
+    top: 843px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: #B4B4B4;
+
+}
+.login-box{
+    position: absolute;
+    width: 560px;
+    height: 96px;
+    left: 64px;
+    top: 361px;
+}
+
