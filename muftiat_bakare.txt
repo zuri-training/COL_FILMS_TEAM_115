@@ -1,0 +1,17 @@
+﻿1. I developed the Landing page, sign/log in page, reset password page, contact us page.
+2. Currently, trying to develop the upload video page and any other page I can do before the deadline
+
+
+https://github.com/zuri-training/COL_FILMS_TEAM_115/issues/19
+
+
+https://github.com/zuri-training/COL_FILMS_TEAM_115/issues/18
+
+
+https://github.com/zuri-training/COL_FILMS_TEAM_115/issues/7
+
+
+https://github.com/zuri-training/COL_FILMS_TEAM_115/issues/4
+
+
+https://github.com/zuri-training/COL_FILMS_TEAM_115/tree/frontend_template
