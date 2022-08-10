@@ -19,10 +19,10 @@
     <input type="text" placeholder="biolaodogwu@gmail.com" name="email" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"required>
     
       <input type="checkbox" checked="checked" name="remember"> Remember me
-    <span class="psw"><a href="#">Forgot password?</a></span>
+    <span class="psw"><a href="forgot_password.html">Forgot password?</a></span>
     <button class="button5" type="submit">Sign In</button>
     
     <div class="account">
