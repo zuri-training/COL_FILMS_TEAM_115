@@ -1,2 +1,0 @@
-1)	I developed the Landing page, sign in page, reset password page, contact us page.
-2)	Currently, trying to develop the upload video page and any other page I can do before the deadline
