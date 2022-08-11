@@ -1,145 +1,246 @@
 *{
     margin: 0px;
     padding: 0px;
-}
-.container{
-    width: 100%;
-    height: 100vh;
+
+box-sizing: border-box;}
+
+    
+    
+   body{
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    
+    background: #FFFFFF;
+   }
+   .rightbar{
+    position: absolute;
+width: 632px;
+height: 1024px;
+left: 808px;
+top: -1px; 
+   }
+
+
+    .rightbar{
+        background-image: url(sign/images/Frame\ 195.png);
+        background-size: contain;
+        background-repeat:no-repeat;
+
+    }
+
+    .logo{
+
+
+position: absolute;
+width: 172px;
+height: 65px;
+left: 64px;
+top: 36px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 43.235px;
+line-height: 65px;
+color: #3AA4DA;
+    }
+
+
+    h2{
+        position: absolute;
+        width: 255px;
+        height: 48px;
+        left: 64px;
+        top: 145px;
+        
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 48px;
+        color: #3AA4DA;
+    }
+
+    .first{
+        
+position: absolute;
+left: 64px;
+right: 50%;
+top: 025%;
+bottom: 90.5%;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 36px;
+color: #3AA4DA;
+    }
+
+.firstinpt {
+
+ display: flex;
+flex-direction: row;
+
+padding: 10px;
+gap: px;
+
+position: absolute;
+left: 64px;
+top: 30.02%;
+
+background: #FFFFFF;
+border: 2px solid rgba(0, 0, 0, 0.5);
+border-radius: 8px;
+width: 250px;
+    }
+
+.second{
+
+position: absolute;
+left: 376px;
+right: 0%;
+top: 025%;
+bottom: 90.5%;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 36px;
+color: #3AA4DA;
 
 }
-img{
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 43.235px;
-    line-height: 65px;
-    color: #3AA4DA
-   position: absolute;
-    width: 127px;
-    height: 48px;
-    left: 64px;
-}
-.rightbar{
-    position: absolute;
-    width: 30%;
-    height: 100vh;
-    left: 1430px;
-    top: -1px;
-    background-image: url(sign/images/Frame\ 195.png);
-    background-size: contain;
-    background-repeat: none;
-}
-p{
-    position: absolute;
-    width: 255px;
-    height: 48px;
-    left: 64px;
-    top: 145px;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 48px;
-    color: #3AA4DA; 
-  
-}
-.sign-up{
-    position: absolute;
-    top: 229px;
-    left: 64;
-    gap: 30px;
-      
-}
-.sign-up label{
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 36px;
-    color: #3AA4DA;
+.secondinpt{
+    display: flex;
+flex-direction: row;
+
+padding: 10px;
+gap: px;
+
+position: absolute;
+left: 376px;
+top: 30.02%;
+
+background: #FFFFFF;
+border: 2px solid rgba(0, 0, 0, 0.5);
+border-radius: 8px;
+width: 250px;
     
 }
-.sign-up input{
-    box-sizing: border-box;
-    padding: 15px;
-    border-radius: 8px;
-    border: 8px;
-    margin-left: 0px;
-    border: 1px solid rgb(131, 129, 129);
+.third{
+position: absolute;
+left: 64px;
+right: 69.29%;
+top: 370px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 36px;
+
+color: #3AA4DA;
 
 }
-.field{
-    position: absolute;
-    left: 64px;
-    top: 361px;
-    width: 560px;
+.thirdinpt{
+display: flex;
+flex-direction: row;
+padding: 15px 30px;
+gap: 10px;
+width: 560px;
+position: absolute;
+left: 64px;
+top: 40.02%;
+
+background: #FFFFFF;
+border: 2px solid rgba(0, 0, 0, 0.5);
+border-radius: 8px;
 }
-.field label{
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
+.fourth{
+    position: absolute;
+left: 64px;
+right: 69.29%;
+top: 470px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 36px;
+
+color: #3AA4DA;
+
+}
+.fourthinpt{
+    
+        display: flex;
+        flex-direction: row;
+        padding: 15px 30px;
+        gap: 10px;
+        width: 560px;
+        position: absolute;
+        left: 64px;
+        top: 50.02%;
+        
+        background: #FFFFFF;
+        border: 2px solid rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+}
+
+form p{
+position: absolute;
+width: 294px;
+height: 30px;
+left: 64px;
+top: 570px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 30px;
+color: #3AA4DA;
+}
+button{
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 16px 32px;
+gap: 8px;
+
+position: absolute;
+width: 560px;
+height: 68px;
+left: 64px;
+top: 663px;
+
+background: #3AA4DA;
+border-radius: 8px;
+border: none;
+color: #FFFFFF;
+cursor: pointer;
+}
+button a{
+    color: #FFFFFF;
+    text-decoration: none;
     font-size: 24px;
-    line-height: 36px;
+}
+.end{
+    position: absolute;
+width: 401px;
+height: 36px;
+left: 133px;
+top: 843px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 36px;
+}
+.end a{
+    text-decoration: none;
+    font-weight: 900;
     color: #3AA4DA;
 }
-.field input{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 15px;
-    gap: 10px;
-    background: #FFFFFF;
-    border: 1px solid rgb(133, 131, 131);
-    margin-bottom: 10px;
-    width: 560px;
-    border-radius: 8px;
-}
-.field button .create{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 16px 32px;
-    gap: 8px;
-    position: absolute;
-    width: 560px;
-    height: 68px;
-    left: 64px;
-    top: 751px;
-    background: #FFFFF
-}
-.button{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 16px 32px;
-    gap: 8px;
-    position: absolute;
-    width: 560px;
-    height: 68px;
-    left: 64px;
-    top: 751px;
-    background: #FFFFF
-}
-.field p{
-    text-align: center;
-    padding-top: 20px;
-    font-size: 15px;
-
-}
-.pa{
-    position: absolute;
-    width: 401px;
-    height: 36px;
-    left: 133px;
-    top: 843px;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 36px;
-    color: #B4B4B4;
- }
-
- 
