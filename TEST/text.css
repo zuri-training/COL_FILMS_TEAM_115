@@ -451,17 +451,74 @@ h5{
     padding: 10px 0px;
     gap: 10px;
 }
-  main{
+main{
       display: flex;
       flex-wrap: wrap;
   }
- .movie img{
+.movie img{
       width: 660px;
       height: 330px;
       position: absolute;
       left: 370px;
       top: 132px;
   }
+.a img{
+    width: 660px;
+    height: 330px;
+    left: 100px;
+    top: 132px;
+    margin-left: 40%;
+    margin-right: auto;
+    
+}
+.a p{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    position: absolute;
+    width: 428.25px;
+    height: 92px;
+    left: 280px;
+    top: 183px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 30px;
+    color: #FFFFFF;
+    font-family: 'poppins';
+}
+.a a{
+    position: absolute;
+    width: 411.17px;
+    height: 110px;
+    left: 280px;
+    top: 271px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 5px;
+    gap: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    color: #FFFFFF;
+    font-family: 'poppins';
+
+}
+
+.aa img{
+    width: 254px;
+    height: 160px;
+    position: absolute;
+    left: 1122px;
+    top: 193px;
+    background: url(); linear-gradient((0deg, #8F8D8D, #8F8D8D), linear-gradient(0deg, #8F8D8D, #8F8D8D), linear-gradient(0deg, #8F8D8D, #8F8D8D), #8F8D8D);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
 .m img{
     width: 170px;
     height: 260px;
@@ -564,6 +621,36 @@ h5{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
 }
+h6{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 42px;
+    position: absolute;
+    width: 152px;
+    height: 29px;
+    left: 1172px;
+    top: 132px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+}
+h7{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 68px;
+    position: absolute;
+    width: 121px;
+    height: 29px;
+    left: 1188px;
+    top: 641px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+}
 footer{
     position: absolute;
     width: 1440px;
@@ -588,10 +675,30 @@ footer{
 }
 
 .dowm{
-    position: absolute;
+    width: 124px;
+    height: 48px;
+    left: 727px;
+    top: 1437px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 48px;
     display: flex;
-    flex-direction: column;
-    margin-right: 10rem;
+    align-items: center;
+}
+.h1{
+    width: 124px;
+    height: 48px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+    color: #0A0A0A;
+
 }
 
 
