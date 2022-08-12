@@ -16,16 +16,29 @@ def index(request):
     # context = {
     #     'videos' : page_obj
     # }
+    if request.user.is_authenticated:
+        return redirect('/home/')
     return render(request, 'apps/index.html', {})
 
 @login_required
 def home(request):
     videos = Upload.objects.all()
-    paginator = Paginator(videos, 3)
+    latest_video = Upload.objects.latest('created_at')
+    paginator = Paginator(videos, 5)
+    first3 = Upload.objects.all().order_by('id')[:3]
+    last3 = Upload.objects.filter().order_by('-id')[:3]
+    # paginator2 = Paginator(videos, 5)
+
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
+
+    # page_number2 = request.GET.get('page')
+    # page_obj2 = paginator2.get_page(page_number2)
     context = {
-        'videos' : page_obj
+        'videos' : page_obj,
+        'first3' : first3,
+        'last3' : last3,
+        'last_v' : latest_video
     }
     return render(request, 'apps/home.html', context)
 

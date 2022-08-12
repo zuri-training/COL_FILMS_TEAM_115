@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock css %}
 
 {% block content %}
 
 
-<h1>Landing page</h1>
+{% comment %} <h1>Landing page</h1>
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
@@ -38,7 +48,211 @@
             <a href="?page={{ videos.paginator.num_pages }}">last &raquo;</a>
         {% endif %}
     </span>
+</div> {% endcomment %}
+
+<div class="a">
+    <div class="alpha">
+        <div class="uploadlg"><img src="{% static 'images/logo.svg' %}" alt="logo" width="180px" height="50px"></div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <h2>Menu</h2>
+                    <a href="/home/"><p><span class="material-symbols-outlined">
+                        home
+                        </span>Home</p></a>
+                    <a href="/upload/" style="opacity: 1"><p><span class="material-symbols-outlined">
+                        trending_up
+                        </span>Upload Video</p></a>
+                    <a href="#"><p><span class="material-symbols-outlined">
+                        folder_special
+                        </span>Saved</p></a>
+                    <a href="#"><p><span class="material-symbols-outlined">
+                        cloud_download
+                        </span>My downloads</p></a>
+        
+                    <h2>My Library</h2>
+                    <a href="#"><p><span class="material-symbols-outlined">
+                        history
+                        </span>Recents</p></a>
+                    <a href="#"><p><span class="material-symbols-outlined">
+                        favorite
+                        </span>Favorites</p></a>
+                    <a href="#"><p><span class="material-symbols-outlined">
+                        playlist_play
+                        </span>Watchlist</p></a>
+        
+                    <h2>Settings</h2>
+                    <a href="#"><p><span class="material-symbols-outlined">
+                        person
+                        </span>Account</p></a>
+                    <a href="/logout/"><p><span class="material-symbols-outlined">
+                        logout
+                        </span>Log Out</p></a>
+                    <a href="#"><p><span class="material-symbols-outlined">
+                        toggle_off
+                        </span>Dark Mode</p></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr color="#8F8D8D" width="1" size="500">
+    <div class="content">
+        <div class="topbar">
+            <form class="search-container">
+                <button type="submit"><span class="material-symbols-outlined">
+                    Search
+                    </span>
+                </button>
+                <input type="text" placeholder="Search">
+            </form>
+            <div class="bell">
+            <span class="material-symbols-outlined">
+                notifications
+                </span></div>
+            <img src="{% static 'images/collegestudent_profilepic.jpg' %}" alt="profilepic" width="50px" height="50px">
+        </div>
+
+        <div class="add_home ">
+            <div class="home1">
+                <a href="/play-video?video_id={{last_v.id}}">
+                    <video width="600" controls >
+                        <source src="{{last_v.video_path.url}}" type="video/mp4" >
+                    </video>
+                </a>
+                <div>
+                    <h3>Continue watching</h3>
+                    <div class="add_home video">
+                    {% for video in first3 reversed %}
+                        <a href="/play-video?video_id={{video.id}}">
+                            <video width="160" height="200" controls>
+                                <source src="{{video.video_path.url}}" type="video/mp4" >
+                            </video>
+                        </a>
+                    {% endfor %}
+                    </div>
+                    {% comment %} <div class="add_home video">
+                        <video width="160" height="200" controls >
+                            <source src="" type="video/mp4" >
+                        </video>
+                        <video width="160" height="200" controls >
+                            <source src="" type="video/mp4" >
+                        </video>
+                        <video width="160" height="200" controls >
+                            <source src="" type="video/mp4" >
+                        </video>
+                    </div> {% endcomment %}
+                </div>
+                <div>
+                    <h3>Top Recommended</h3>
+                    <div class="add_home video">
+                    {% for video in last3 %}
+                        <a href="/play-video?video_id={{video.id}}">
+                            <video width="160" height="200" controls>
+                                <source src="{{video.video_path.url}}" type="video/mp4" >
+                            </video>
+                        </a>
+                    {% endfor %}
+                    </div>
+                    {% comment %} <div class="add_home video">
+                        <video width="160" height="200" controls >
+                            <source src="" type="video/mp4" >
+                        </video>
+                        <video width="160" height="200" controls >
+                            <source src="" type="video/mp4" >
+                        </video>
+                        <video width="160" height="200" controls >
+                            <source src="" type="video/mp4" >
+                        </video>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+            <div class="home2">
+                <div>
+                    <h5>Continue watching</h5>
+                    <div class="flex-column video">
+                        {% for video in videos reversed %}
+                        <a href="/play-video?video_id={{video.id}}">
+                            <video width="160" height="100" controls >
+                                <source src="{{video.video_path.url}}" type="video/mp4" >
+                            </video>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <br/>
+
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if videos.has_previous %}
+                            <a href="?page=1">&laquo; first</a>
+                            <a href="?page={{ videos.previous_page_number }}">previous</a>
+                        {% endif %}
+
+                        <span class="current">
+                            Page {{ videos.number }} of {{ videos.paginator.num_pages }}.
+                        </span>
+
+                        {% if videos.has_next %}
+                            <a href="?page={{ videos.next_page_number }}">next</a>
+                            <a href="?page={{ videos.paginator.num_pages }}">last &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
+
+                {% comment %} <div>
+                    <h5>Continue watching</h5>
+                    <div class="flex-column video">
+                        <video width="160" height="100" controls >
+                            <source src="" type="video/mp4" >
+                        </video>
+                        <video width="160" height="100" controls >
+                            <source src="" type="video/mp4" >
+                        </video>
+                        <video width="160" height="100" controls >
+                            <source src="" type="video/mp4" >
+                        </video> 
+                    </div>
+                </div> {% endcomment %}
+                {% comment %} <div>
+                    <h5>Top Recommended</h5>
+                    <div class="flex-column video">
+                        <video width="160" height="100" controls >
+                            <source src="" type="video/mp4" >
+                        </video>
+                        <video width="160" height="100" controls >
+                            <source src="" type="video/mp4" >
+                        </video>
+                        <video width="160" height="100" controls >
+                            <source src="" type="video/mp4" >
+                        </video>
+                    </div>
+                </div> {% endcomment %}
+            </div>
+        </div>
+    </div>
 </div>
+<footer>
+    <div class="foot">
+        <div class="left">
+            <div class="logo"><img src="{% static 'images/logo.svg' %}" alt="logo" width="127px" height="48px"></div>
+            <p>STUDEO is an online movie streaming platform where college students can stream and upload short movies not more 15 mins. our mission is to give young college creatives visibility, learn about our brand, our community and equally be entertained from other creatives contents around.</p>  
+        </div>
+        <div class="middle">
+            <h4>Company </h4>
+            <p>About Us</p>  
+            <p>Contact Us</p> 
+            <p>Support</p>   
+        </div>
+        <div class="right">
+        <h4>Legal </h4>
+        <p>Term of Use</p>  
+            <p>Term of Service</p> 
+                <p>Privacy Policy</p>
+                    <p>FAQ</p>   
+        </div>
+    </div>
+    <h5><span>&#169</span> 2022 Copyright. All rights reserved.</h5>
+</footer>
 
 
 {% endblock content %}

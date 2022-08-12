@@ -7,6 +7,8 @@ from django.contrib import messages
 
 # Create your views here.
 def register(request):
+    if request.user.is_authenticated:
+        return redirect('/home/')
     if request.method == 'POST':
         user_form = CustomUserCreationForm(request.POST)
         profile_form = ProfileForm(request.POST, request.FILES)
@@ -38,13 +40,15 @@ def contact(request):
     return render(request, 'accounts/contact.html', context)
 
 def login_view(request):
+    if request.user.is_authenticated:
+        return redirect('/home/')
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            messages.success(request, "Logged In successful")
-            return redirect('/')
+            # messages.success(request, "Logged In successful")
+            return redirect('/home/')
     else:
         form = AuthenticationForm(request)
         # form.fields['username'].widget.attrs['class'] = "bold"

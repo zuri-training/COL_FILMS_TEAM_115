@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>Play Video </h1>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<h3>{{ video.title }}</h3>
+<video width="500" controls >
+    <source src="{{video.video_path.url}}" type="video/mp4" >
+</video>
+<a href="/react-video/?video_id={{video.id}}">
+    <button>Like {{video.no_of_reacts}}</button>
+</a>
+
+<!-- TODO -->
+<a href="/share-video/?video_id={{video.id}}">
+    <button>Share </button>
+</a>
+<a href="/save-video/?video_id={{video.id}}">
+    <button>Save </button>
+</a>
+<a href="/fetch-saved-video/?video_id={{video.id}}">
+    <button>Saved </button>
+</a>
+{% for comment in comments reversed %}
+    <p> {{ comment.user.username }} </p>
+    <p> {{ comment.comment }} </p>
+{% endfor%}
+<div class="pagination">
+    <span class="step-links">
+        {% if comments.has_previous %}
+            <a href="?video_id={{video.id}}&page=1">&laquo; first</a>
+            <a href="?video_id={{video.id}}&page={{ comments.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ comments.number }} of {{ comments.paginator.num_pages }}.
+        </span>
+
+        {% if comments.has_next %}
+            <a href="?video_id={{video.id}}&page={{ comments.next_page_number }}">next</a>
+            <a href="?video_id={{video.id}}&page={{ comments.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+<form action="/comment-video/?video_id={{video.id}}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type='submit'>Comment</button>
+</form>
+
+
+
+{% endblock content %}

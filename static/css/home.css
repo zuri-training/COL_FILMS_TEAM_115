@@ -1,0 +1,50 @@
+
+
+.add_home{
+    display: flex;
+    /* gap: 50px; */
+}
+
+.home1{
+    /* border: 1px solid red; */
+}
+
+.home1 div{
+    gap: 60px;
+    /* margin-top: 50px; */
+}
+
+.home2{
+    margin-left: 100px;
+}
+
+h3{
+    margin: 15px 0;
+    text-align: center;
+}
+
+.video video{
+    border-radius: 10px;
+} 
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-column video{
+    margin-bottom: 30px;
+}
+
+h5{
+    margin-bottom: 20px;
+}
+
+
+footer{
+    margin-top: 350px;
+}
+
+body{
+    background-color: white;
+}

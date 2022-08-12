@@ -1,14 +1,39 @@
-.fill label{
-    font-weight: bolder;
+.login, .signup{
+  text-align: center;
+  background-color: white;
+  width: 120px;
+  /* height: 35px; */
+  padding: 10px 10px;
+  border-radius: 5px;
+  border-style: none;
+  color: black;
+  font-size: 17px;
+  font-weight: 500;
+  /* margin-right: 30px; */
+  text-decoration: none;
 }
 
-input[type="email"]{
-  width: 100%;
-  padding: 12px;
-  border: 1px solid rgb(29, 106, 141);
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
+.signup {
+  background-color: rgb(29, 106, 141);
+  margin-left: 30px;
 }
+
+.login:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.signup:hover{
+  background-color: rgba(29, 106, 141, 0.9);
+}
+
+input[type="email" i] {
+  width: 80%;
+  padding: 12px 25px;
+  margin: 20px 0;
+  display: block;
+  border: 1px solid rgb(4, 68, 110);
+  border-radius: 10px;
+}
+
+
+  

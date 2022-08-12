@@ -1,60 +1,76 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,200" />
+{% endblock css %}
 
 {% block content %}
 
+<div class="video_me">
+    <div class="watch">
+        <video width="80%" height="2%" controls>
+        <source src="{{video.video_path.url}}" type="video/mp4">
+    </div>
+    <div class="comment">
+        <div class="cruise">
+            
+            <h2>{{ video.title }}</h2>
+            <p >50,000 views. Premiered {{ video.created_at }}</p>
+            <div class="h">
+                <a href="/react-video/?video_id={{video.id}}"><p><span class="material-symbols-outlined">
+                    thumb_up
+                    </span>{{video.no_of_reacts}}</p></a>
+                <a href="/share-video/?video_id={{video.id}}"><p><span class="material-symbols-outlined">
+                    share
+                    </span>share</p></a>
+                <a href="/save-video/?video_id={{video.id}}"><p><span class="material-symbols-outlined">
+                    save
+                    </span>save</p></a>
+            </div>
+            <h4>5,000 comments</h4>
+            <div class="j">
+                <img src="{% static 'images/collegestudent_profilepic.jpg' %}" alt="profilepic" width="50px" height="50px">
+                <form action="/comment-video/?video_id={{video.id}}" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type='submit'>Comment</button>
+                </form>
+                {% comment %} <input type="text" placeholder="Add a comment..."> {% endcomment %}
+            </div>
+            <hr>
+            {% for comment in comments reversed %}
+                <div class="k">
+                    <img src="{% static 'images/collegestudent_profilepic.jpg' %}" alt="profilepic" width="50px" height="50px">
+                    <div class="l">
+                        <p> {{ comment.user.username }} </p>
+                        <p> {{ comment.comment }} </p>
+                    </div> 
+                </div>
+            {% endfor %}
+            {% comment %} <div class="k">
+                <img src="{% static 'images/collegestudent_profilepic.jpg' %}" alt="profilepic" width="50px" height="50px">
+                <div class="l">
+                    <h5>Annie Sunday</h5>
+                    <p>love this</p>
+                </div> 
+            </div> {% endcomment %}
+            {% comment %} <hr> {% endcomment %}
+        </div>
+        <div class="play">
+            <h2>Similar Movies</h2>
+            <img src="{% static 'images/LATEST_FILM_1.jpg' %}" alt="shortfilm" width="416px" height="247px">
+            <h4>Big Man</h4>
+            <p>1100 views</p>
+            <img src="{% static 'images/SHORT_FILM_1.png' %}" alt="shortfilm" width="416px" height="247px">
+            <h4>Unomalanga</h4>
+            <p>12000 views</p>
+            <img src="{% static 'images/POPULAR_FILM_1.jpg' %}" alt="popularfilm" width="416px" height="247px">
+            <h4>Dont Beg Now</h4>
+            <p>2345 views</p>
+        </div>
 
-<h1>Play Video </h1>
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-<h3>{{ video.title }}</h3>
-<video width="500" controls >
-    <source src="{{video.video_path.url}}" type="video/mp4" >
-</video>
-<a href="/react-video/?video_id={{video.id}}">
-    <button>Like {{video.no_of_reacts}}</button>
-</a>
-
-<!-- TODO -->
-<a href="/share-video/?video_id={{video.id}}">
-    <button>Share </button>
-</a>
-<a href="/save-video/?video_id={{video.id}}">
-    <button>Save </button>
-</a>
-<a href="/fetch-saved-video/?video_id={{video.id}}">
-    <button>Saved </button>
-</a>
-{% for comment in comments reversed %}
-    <p> {{ comment.user.username }} </p>
-    <p> {{ comment.comment }} </p>
-{% endfor%}
-<div class="pagination">
-    <span class="step-links">
-        {% if comments.has_previous %}
-            <a href="?video_id={{video.id}}&page=1">&laquo; first</a>
-            <a href="?video_id={{video.id}}&page={{ comments.previous_page_number }}">previous</a>
-        {% endif %}
-
-        <span class="current">
-            Page {{ comments.number }} of {{ comments.paginator.num_pages }}.
-        </span>
-
-        {% if comments.has_next %}
-            <a href="?video_id={{video.id}}&page={{ comments.next_page_number }}">next</a>
-            <a href="?video_id={{video.id}}&page={{ comments.paginator.num_pages }}">last &raquo;</a>
-        {% endif %}
-    </span>
+    </div>
 </div>
-<form action="/comment-video/?video_id={{video.id}}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type='submit'>Comment</button>
-</form>
 
 
 

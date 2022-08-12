@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
 
-<h1>Registration form</h1>
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
@@ -12,55 +11,64 @@
 </ul>
 {% endif %}
 {{ user_form.non_field_errors }}
-<form method='POST' enctype="multipart/form-data">
-    {% csrf_token %}
-
-    {% for error in user_form.username.errors %}
-            <p  style="color: red">{{error}}</p>
-    {% endfor %}
-    {{ user_form.firstname.label_tag }} {{ user_form.firstname }}
-
-    {% for error in user_form.username.errors %}
-            <p  style="color: red">{{error}}</p>
-    {% endfor %}
-    {{ user_form.lastname.label_tag }} {{ user_form.lastname }}
+<div class="reg_top">
+    <img class="logo" src="{% static 'images/logo.svg' %}" alt="">
+    <h1>Registration form</h1>
+</div>
+<div class="log">
+    <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="fill">
+            {% for error in user_form.username.errors %}
+                    <p  style="color: red">{{error}}</p>
+            {% endfor %}
+            {{ user_form.firstname.label_tag }} {{ user_form.firstname }}
     
-    {% for error in user_form.username.errors %}
-            <p  style="color: red">{{error}}</p>
-    {% endfor %}
-    {{ user_form.username.label_tag }} {{ user_form.username }}
-
-    {% for error in user_form.email.errors %}
-        <p  style="color: red">{{error}}</p>
-    {% endfor %} 
-    {{ user_form.email.label_tag }} {{ user_form.email }}
-
-    {% for error in profile_form.name.errors %}
-        <p  style="color: red">{{error}}</p>
-    {% endfor %} 
-    {{ profile_form.name.label_tag }} {{ profile_form.name }}
-
-    {% for error in profile_form.gender.errors %}
-        <p  style="color: red">{{error}}</p>
-    {% endfor %}  
-    {{ profile_form.gender.label_tag }} {{ profile_form.gender }}
-
-    {% for error in profile_form.student_id_card.errors %}
-        <p  style="color: red">{{error}}</p>
-    {% endfor %} 
-    {{ profile_form.student_id_card.label_tag }} {{ profile_form.student_id_card }}
-
-    {% for error in user_form.password1.errors %}
-        <p  style="color: red">{{error}}</p>
-    {% endfor %}
-    {{ user_form.password1.label_tag }} {{ user_form.password1 }}
-
-    {% for error in user_form.password2.errors %}
-        <p  style="color: red">{{error}}</p>
-    {% endfor %}
-    {{ user_form.password2.label_tag }} {{ user_form.password2 }}
-
-    <button type='submit'>Register</button>
-</form>
+            {% for error in user_form.username.errors %}
+                    <p  style="color: red">{{error}}</p>
+            {% endfor %}
+            {{ user_form.lastname.label_tag }} {{ user_form.lastname }}
+            
+            {% for error in user_form.username.errors %}
+                    <p  style="color: red">{{error}}</p>
+            {% endfor %}
+            {{ user_form.username.label_tag }} {{ user_form.username }}
+    
+            {% for error in user_form.email.errors %}
+                <p  style="color: red">{{error}}</p>
+            {% endfor %} 
+            {{ user_form.email.label_tag }} {{ user_form.email }}
+    
+            {% for error in profile_form.name.errors %}
+                <p  style="color: red">{{error}}</p>
+            {% endfor %} 
+            {{ profile_form.name.label_tag }} {{ profile_form.name }}
+    
+            {% for error in profile_form.gender.errors %}
+                <p  style="color: red">{{error}}</p>
+            {% endfor %}  
+            {{ profile_form.gender.label_tag }} {{ profile_form.gender }}
+    
+            {% for error in profile_form.student_id_card.errors %}
+                <p  style="color: red">{{error}}</p>
+            {% endfor %} 
+            {{ profile_form.student_id_card.label_tag }} {{ profile_form.student_id_card }}
+    
+            {% for error in user_form.password1.errors %}
+                <p  style="color: red">{{error}}</p>
+            {% endfor %}
+            {{ user_form.password1.label_tag }} {{ user_form.password1 }}
+    
+            {% for error in user_form.password2.errors %}
+                <p  style="color: red">{{error}}</p>
+            {% endfor %}
+            {{ user_form.password2.label_tag }} {{ user_form.password2 }}
+        </div>
+        <button type='submit' class="button5">Register</button>
+    </form>
+    <div class="avatar">
+        <img src="{% static 'images/login_picture.jpg' %}" alt="Avatar" style="height: 100%;" >
+    </div>
+</div>
 
 {% endblock content %}
