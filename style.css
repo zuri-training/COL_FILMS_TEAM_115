@@ -510,7 +510,7 @@ footer span {
   margin-top: 10px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
   nav .menubtn {
     display: flex;
   }
@@ -916,6 +916,7 @@ hr {
   margin-left: 25px;
   margin-top: 40px;
 }
+/*changes begins*/
 .file{
   text-align: center;
   padding: 20px;
@@ -923,7 +924,11 @@ hr {
 }
 .file span{
   font-size: 60px;
-  opacity: 1;
+  opacity: 0.5;
+  color: #0A0A0A;
+}
+.upload_box .closebtn{
+  display: none;
 }
 .upload_box h4{
   font-size: 32px;
@@ -947,6 +952,44 @@ hr {
 }
 .menu ul li{
   list-style-type: none;
+}
+/*changes begins*/
+@media screen and (max-width: 500px) {
+  .upload_box .closebtn{
+    display: block;
+    padding-left: 270px;
+    padding-top: 0px;
+    font-size: 20px;
+    color: #F90A0A;
+  }
+  .upload_box {
+    display: block;
+    height: 80vh;
+    margin-top: 0px;
+  }
+  .upload_box h4{
+    margin-top: -40px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .file span{
+    font-size: 160px;
+    color: #0A0A0A;
+    opacity: 0.5;
+  }
+  .upload_foot h5{
+    margin-right: 80px;
+    margin-top: -80px;
+  }
+  .upload_foot span{
+    font-size: 12px;
+  }
+  .alpha{
+    display: none;
+  }
+  .topbar{
+    display: none;
+  }
 }
 /*changes begins*/
 /*watch_coment_page*/
