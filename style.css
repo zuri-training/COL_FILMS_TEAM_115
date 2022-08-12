@@ -948,11 +948,13 @@ hr {
 .menu ul li{
   list-style-type: none;
 }
+/*changes begins*/
 /*watch_coment_page*/
 .video_me{
   display: block;
   background-color: #FFFFFF;
   overflow: hidden;
+  font-family: 'Poppins';
 }
 .watch{
   width: 1440px;
@@ -976,7 +978,7 @@ hr {
 }
 .play{
   width: 50%;
-  margin-left: 450px;
+  margin-left: 370px;
   
 }
 .play p{
@@ -1000,6 +1002,8 @@ text-align: left;
 }
 .play h2{
   padding-bottom: 20px;
+  font-weight: 700;
+  font-size: 30px;
 }
 .h{
   display: flex;
@@ -1031,6 +1035,59 @@ text-align: left;
   padding-bottom: 25PX;
   line-height: 20px;
 }
+.video_me .show1, .video_me .show2, .video_me .s{
+  display: none;
+}
+.hide1{
+  color:#0C618D;
+}
+@media screen and (max-width: 500px) {
+  .video_me{
+    display: block;
+  }
+  .comment {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .play{
+    margin-left: 0px;
+  }
+  .cruise{
+    margin-right: 0px;
+    width: 100%;
+  }
+  .cruise .hide1, .cruise .hide2, .cruise .h{
+    display: none;
+  }
+  .watch video{
+    width: 30%;
+    height: 30vh;
+  }
+  .video_me .show1, .video_me .show2, .video_me .s{
+    display: block ;
+    margin-left: 30px;
+    
+  }
+  .video_me .s{
+    display: flex;
+    flex-direction: row;
+  }
+  .video_me .s a{
+    padding-right: 20px;
+    margin-top: 16px;
+  }
+  .video_me .s a span{
+    color: #0A0A0A;
+  font-size: 18px;}
+  .show1{
+    margin-bottom: 20px;
+    color: #0C618D;
+  }
+  .play img{
+    width: 400px;
+  }
+}
+/*changes end*/
 /*watch-view-default*/
 .slidecontainer img{
   position: relative;
