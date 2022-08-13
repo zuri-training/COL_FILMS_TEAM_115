@@ -1,4 +1,4 @@
-# COL_FILMS_TEAM_115
+# DEPLOYMENT
 
 Architecture - DJANGO TEMPLATING.
 Dependencies are in the requirements.txt file.
