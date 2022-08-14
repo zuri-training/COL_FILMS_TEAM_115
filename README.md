@@ -3,6 +3,11 @@
 <<<<<<< HEAD
 Architecture - DJANGO TEMPLATING
 
+SECRET_KEY=django-insecure-b(i=s&*a&w&b83wpivk)fa-z((lhag%bcbf!el67rw!jv6j)_w
+DEBUG=1
+ALLOWED_HOST=127.0.0.1
+
+
 Requirements
 asgiref==3.5.2
 attrs==22.1.0
