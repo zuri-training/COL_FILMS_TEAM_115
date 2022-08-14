@@ -23,7 +23,8 @@ def index(request):
 @login_required
 def home(request):
     videos = Upload.objects.all()
-    latest_video = Upload.objects.latest('created_at')
+    if len(videos) > 0:
+        latest_video = Upload.objects.latest('created_at')
     paginator = Paginator(videos, 5)
     first3 = Upload.objects.all().order_by('id')[:3]
     last3 = Upload.objects.filter().order_by('-id')[:3]
@@ -104,9 +105,12 @@ def comment(request):
 @login_required
 def save_video(request):
     video_id = request.GET.get('video_id')
-    video_qs = Saved.objects.filter(video=request.GET.get('video_id'), user=request.user).first()
+    upload = Upload.objects.get(id=video_id)
+    # print(upload)
+    # video_qs = Saved.objects.filter(video=request.GET.get('video_id'), user=request.user).first()
+    video_qs = Saved.objects.filter(video=upload, user=request.user).first()
     if video_qs is None:
-        new_saved = Saved.objects.create(user=request.user, video=video_id)  
+        new_saved = Saved.objects.create(user=request.user, video=upload)  
         new_saved.save() 
         messages.info(request, "Video haved been saved!!!")
     else:
@@ -115,10 +119,15 @@ def save_video(request):
 
 @login_required
 def fetch_saved_video(request):
-    video_id = request.GET.get('video_id')
-    video_qs = Saved.objects.filter(video=request.GET.get('video_id'), user=request.user)
-    print(video_qs)
-    return redirect(f'/play-video/?video_id={video_id}')
+    # video_id = request.GET.get('video_id')
+    video_qs = Saved.objects.filter(user=request.user)
+    last_saved = video_qs.last()
+    paginator = Paginator(video_qs, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    # print( video_qs.last().video.id)
+    return render(request, 'apps/saved_video.html', {'videos': page_obj, 'last_saved': last_saved})
 
 
 

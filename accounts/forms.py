@@ -7,9 +7,9 @@ from django.core.exceptions import ValidationError
 from .models import Contact, Profile
   
 class CustomUserCreationForm(UserCreationForm):  
-    firstname = forms.CharField(label='First Name', min_length=5, max_length=150)  
-    lastname = forms.CharField(label='Last Name', min_length=5, max_length=150)  
-    username = forms.CharField(label='Username', min_length=5, max_length=150)  
+    firstname = forms.CharField(label='First Name', min_length=2, max_length=150)  
+    lastname = forms.CharField(label='Last Name', min_length=2, max_length=120)  
+    username = forms.CharField(label='Username', min_length=2, max_length=150)  
     email = forms.EmailField(label='Email')
     password1 = forms.CharField(label='password', widget=forms.PasswordInput)  
     password2 = forms.CharField(label='Confirm password', widget=forms.PasswordInput)  

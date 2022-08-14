@@ -18,7 +18,7 @@ def register(request):
             profile = profile_form.save(commit=False)
             profile.user = user
             profile.save()
-            messages.success(request, "Successfully added!")
+            messages.success(request, "Account has been created please login")
             return redirect('accounts:login')
         else:
             messages.error(request, "Please fill in all the fields.")

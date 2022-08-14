@@ -81,13 +81,101 @@
             <img src="{% static 'images/collegestudent_profilepic.jpg' %}" alt="profilepic" width="50px" height="50px">
         </div>
         <div class="">
-            <h1>Upload</h1>
-
-            <form action="" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{form.as_p}}    
-                <button type='submit' class="button5">Upload</button>
-            </form> 
+            <h1>Saved Videos</h1>
+            <div class="add_home ">
+                <div class="home1">
+                    <a href="/play-video?video_id={{last_saved.video.id}}">
+                        <video width="600" controls >
+                            <source src="{{last_saved.video.video_path.url}}" type="video/mp4" >
+                        </video>
+                    </a>
+                    <div>
+                        <h3>Continue watching</h3>
+                        <div class="add_home video">
+                        {% comment %} {% for video in videos reversed %}
+                           <a href="/play-video?video_id={{video.video.id}}">
+                                <video width="160" height="200" controls>
+                                    <source src="{{video.video.video_path.url}}" type="video/mp4" >
+                                </video>
+                            </a> 
+                       {% endfor %}  {% endcomment %}
+                        </div>
+                        {% comment %} <div class="add_home video">
+                            <video width="160" height="200" controls >
+                                <source src="" type="video/mp4" >
+                            </video>
+                            <video width="160" height="200" controls >
+                                <source src="" type="video/mp4" >
+                            </video>
+                            <video width="160" height="200" controls >
+                                <source src="" type="video/mp4" >
+                            </video>
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+                <div class="home2">
+                    <div>
+                        <h5>Continue watching</h5>
+                        <div class="flex-column video">
+                            {% for video in videos reversed %}
+                            <a href="/play-video?video_id={{video.video.id}}">
+                                <video width="160" height="100" controls >
+                                    <source src="{{video.video.video_path.url}}" type="video/mp4" >
+                                </video>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <br/>
+    
+                    <div class="pagination">
+                        <span class="step-links">
+                            {% if videos.has_previous %}
+                                <a href="?page=1">&laquo; first</a>
+                                <a href="?page={{ videos.previous_page_number }}">previous</a>
+                            {% endif %}
+    
+                            <span class="current">
+                                Page {{ videos.number }} of {{ videos.paginator.num_pages }}.
+                            </span>
+    
+                            {% if videos.has_next %}
+                                <a href="?page={{ videos.next_page_number }}">next</a>
+                                <a href="?page={{ videos.paginator.num_pages }}">last &raquo;</a>
+                            {% endif %}
+                        </span>
+                    </div>
+    
+                    {% comment %} <div>
+                        <h5>Continue watching</h5>
+                        <div class="flex-column video">
+                            <video width="160" height="100" controls >
+                                <source src="" type="video/mp4" >
+                            </video>
+                            <video width="160" height="100" controls >
+                                <source src="" type="video/mp4" >
+                            </video>
+                            <video width="160" height="100" controls >
+                                <source src="" type="video/mp4" >
+                            </video> 
+                        </div>
+                    </div> {% endcomment %}
+                    {% comment %} <div>
+                        <h5>Top Recommended</h5>
+                        <div class="flex-column video">
+                            <video width="160" height="100" controls >
+                                <source src="" type="video/mp4" >
+                            </video>
+                            <video width="160" height="100" controls >
+                                <source src="" type="video/mp4" >
+                            </video>
+                            <video width="160" height="100" controls >
+                                <source src="" type="video/mp4" >
+                            </video>
+                        </div>
+                    </div> {% endcomment %}
+                </div>
+            </div>
         </div>
         
     </div>

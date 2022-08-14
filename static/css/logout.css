@@ -1,0 +1,44 @@
+.logout-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    /* border: 1px solid red; */
+}
+
+.logout{
+    border: 1px solid grey;
+    width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: white;
+    color: grey;
+    /* margin: auto; */
+}
+
+.logout p{
+    font-size: 1.5em;
+    padding: 30px 0;
+}
+
+.logout button{
+    padding: 8px;
+}
+
+.logout button:hover{
+    cursor: pointer;
+}
+
+.m-10{
+    margin-right: 10px;
+}
+
+.res{
+    /* border: 1px solid grey; */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 20px 0;
+    background: rgba(128, 128, 128, 0.61);
+    display: flex;
+    justify-content: center;
+}

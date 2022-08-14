@@ -1,17 +1,37 @@
 {% extends "base.html" %}
-
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/logout.css' %}">
+{% endblock css %}
 
 {% block content %}
 
 {% if request.user.is_authenticated %}
-    <div style='margin-top:30px;'>
-        <form method='POST'>{% csrf_token %}
+    <div class="logout-center">
+        <div class="logout">
             <p>Are you sure you want to logout?</p>
-            <button type='submit'>Yes, logout.</button>
-        </form>
+            <div class="res">
+                <form action="" method="POST" class="m-10">
+                    {% csrf_token %}
+                    <div >
+                        <button type='submit'>Yes</button>
+                    </div>
+                </form>
+                <form method="POST" action="{{ request.META.HTTP_REFERER }}">
+                    {% csrf_token %}
+                    {% comment %} <input type="hidden" name="next" value="{{ request.META.HTTP_REFERER }}"> {% endcomment %}
+                    <button type="submit">No</button>
+                </form>
+            </div>
+        </div>
     </div>
 {% else %}
-<p>You're not logged in. Would you like to <a href='/login/'>login</a>?</p>
+    <div class="logout-center">
+        <div class="logout">
+            <p>You're not logged in. Would you like to <a href='/login/'>login</a>?</p>
+        </div>
+    </div>
+
 {% endif %}
 
 {% endblock %}

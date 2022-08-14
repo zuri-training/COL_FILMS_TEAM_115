@@ -8,6 +8,8 @@ from pprint import pprint
 # Create your models here.
 def validate_video(video):
     media_info = MediaInfo.parse(video)
+    if len(media_info.tracks) == 1:
+        raise ValidationError('Not a valid video')
     track = media_info.tracks[1]
     if track.track_type == "Video":
         if track.duration > 900000:

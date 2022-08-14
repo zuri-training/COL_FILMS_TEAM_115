@@ -1099,3 +1099,32 @@ text-align: left;
   cursor: pointer;
 }
 
+.msg{
+  /* border: 1px solid red; */
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  padding-left: 100px;
+  border-radius: 10px;
+  background: #0c628dd5;
+  color: rgba(255, 255, 255, 0.781);
+  font-size: 1.2em;
+  list-style-type: none;
+}
+
+
+.errorlist {
+  list-style-type: none;
+  color: red;
+  padding: 5px;
+}
+
+#id_comment{
+  border: none;
+  border-bottom: 1px solid grey;
+  height: 30px;
+  overflow: hidden;
+  /* width: 500px; */
+}
+
+
