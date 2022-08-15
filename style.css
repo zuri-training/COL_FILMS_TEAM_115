@@ -686,7 +686,59 @@ input[type="submit"]:hover {
   color: rgb(4, 68, 110);
   padding: 10px;
 }
-
+.contact .previous4{
+  display: none;
+}
+/*changes begins for contact us page mobile responsiveness*/
+@media screen and (max-width: 500px) {
+  .above {
+    display: flex;
+    flex-direction: column-reverse;
+    outline: solid;
+    outline-color: white;
+    outline-style: outset;
+    outline-width: 3px;
+    width: 90%;
+    height: 100vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 30px;
+  }
+  .contact .previous4{
+    display: block;
+    color: #0C618D;
+  }
+  .above .line1{
+    display: none;
+  }
+  .form {
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+    height: 68vh;
+  }
+  input[type="text"],
+textarea{
+  margin-top: 2px;
+  margin-bottom: 4px;
+  padding: 6px;
+}
+  .contact{
+    width: 100%;
+    height: 32vh;
+    margin-top: 2px;
+    
+  }
+ 
+  .socials{
+    display: none;
+  }
+  nav2{
+    display: none;
+  }
+}
 /*login page styling*/
 .previous2{
   color: #0C618D;
@@ -758,17 +810,73 @@ input[type="submit"]:hover {
   border: none;
   width: 70%;
 }
+@media screen and (max-width: 500px) {
+  .log {
+     display: flex;
+     flex-direction: column-reverse;
+     width: 400px;
+     overflow: hidden;
+     margin-left: 70px;
+    }
+    .fill input[type="text"],
+    .fill input[type="password"] {
+      width: 350px;
+    }
+    .fill {
+      margin-top: 50px;
+    }
+    .psw{
+      float: right;
+      margin-right: -150px;
+      margin-top: -10px;
+      font-size: 12px;
+    }
+    .account{
+      margin-left: 10px;
+      font-size: 12px;
+      width: 100%;
+    }
+    .account a{
+      float:right;
+      margin-right: -150px;
+    }
+    .welcome {
+      padding: 15px;
+      text-align: center;
+      margin-left: 70px;
+      margin-top: 50px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgb(4, 68, 110);
+  }
+  .previous2{
+    color: #0C618D;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  .button5 {
+    background-color: rgb(4, 68, 110);
+    color: white;
+    padding: 14px 2px;
+    margin: 20px 100px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 80%;
+  }
+  .avatar{
+    width: 500px;
+    margin-left: 0px;
+  }
+   }
 /*reset password page styling*/
 .reset_password {
-  background-color: lightgray;
+  background: linear-gradient(to bottom, #0c618d 29%, #dfdcdc 115%);
   width: 100%;
   height: 100%;
-  display: flex;
-  float: left;
   justify-content: space-between;
   padding: 10px;
-  margin: 2% 2%;
-  
+
 }
 .reset_password h1{
   text-align: center;
@@ -776,16 +884,22 @@ input[type="submit"]:hover {
 }
 .reset_password form{
   width: 50%;
+  color:#0A0A0A;
 }
 .forgot {
+outline: solid;
+outline-color:#d3d3d3;
+outline-style: outset;
+outline-width: 3px;
  padding: 60px;
- margin-left: 156.5px;
- margin-top: 50px;
- background-color: #FFFFFF;
+ display: block;
+ background-color:#FFFFFF;
  border-radius: 16px;
  justify-content: space-between;
- width: 1127px;
- height: 905px;
+ height: 2%;
+ width: 100%;
+ margin: 20px 380px;
+
 }
 
 .forgot input[type=text], .forgot input[type=password] {
@@ -794,29 +908,30 @@ input[type="submit"]:hover {
  margin: 35px 0 35px 0;
  display: inline-block;
  border: none;
- background: #f1f1f1;
+ background:#d3d3d3;
  border-radius: 5px;
 }
 
 .forgot input[type=text]:focus, .forgot input[type=password]:focus {
- background-color: lightblue;
+ background-color: #0c618d;
  outline: none;
  padding: 25px;
  
 }
 .forgot label{
   padding-top: 180px;
+  color:#0A0A0A;
 }
 
 hr {
- border: 1px solid #f1f1f1;
+ border: 1px solid #0c618d;
  margin-bottom: 25px;
 }
 
 
 .resetbtn {
  background-color: #1292D3;
- color: white;
+ color: #FFFFFF;
  padding: 16px 20px;
  margin: 20px 180px;
  border: none;
@@ -830,8 +945,35 @@ hr {
  opacity: 1;
 }
 .previous3{
-  color: #0C618D;
+  color:#FFFFFF;
   
+}
+@media screen and (max-width: 500px) {
+ .reset_password {
+    display: flex;
+    width: 500px;
+    overflow: hidden;
+  }
+  .logo4{
+    margin: 0px 90px;
+    color: #FFFFFF;
+    position: relative;
+  }
+  .forgot{
+    width: 350px;
+    height: 70%;  
+    margin-left: -200px;  
+    margin-top: 30px;
+    font-size: 12px;
+  }
+  .resetbtn{
+    margin: 20px 60px;
+    font-size: 10px;
+  }
+  .forgot input[type=text], .forgot input[type=password] {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0 15px 0;}
 }
 /*upload page*/
 
@@ -1132,46 +1274,3 @@ text-align: left;
 }
 /*changes end*/
 /*watch-view-default*/
-.slidecontainer img{
-  position: relative;
-  background-size: cover;
-  overflow: hidden;
-}
-.slidecontainer {
-  width: 100%;
-  position: absolute;
-  
-
-}
-
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 10px;
-  border-radius: 5px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider:hover {
-  opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 23px;
-  height: 24px;
-  border: 0;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 23px;
-  height: 24px;
-  border: 0;
-  cursor: pointer;
-}
